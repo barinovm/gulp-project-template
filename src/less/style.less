@@ -1,0 +1,48 @@
+@import "fonts.less";
+@import "variables.less";
+@import "mixins.less";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background-color: #fff;
+  color: @text-color;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
