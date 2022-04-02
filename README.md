@@ -16,7 +16,8 @@ JS-файлы разбиты на модули, объединение и опт
 Изображения оптимизируются [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin),
 растровые изображения дополнительно конвертируются в формат .webp с помощью [gulp-webp](https://www.npmjs.com/package/gulp-webp), SVG файлы название которых начинается с «icon-» - собираются [gulp-svgstore](https://www.npmjs.com/package/gulp-svgstore) в спрайт.
 Браузерная совместимость описана в ключе browserlist в package.json, если коротко — «без IE11».
-Так же проект можно автоматически конвертировать в .zip [gulp-zip](https://www.npmjs.com/package/gulp-zip) и проверить на стилевые и другие ошибки с помощью линтеров [stylelint](https://stylelint.io/) и [eslint](https://eslint.org/).
+Так же проект можно автоматически конвертировать в .zip [gulp-zip](https://www.npmjs.com/package/gulp-zip) формат, преобразовать к единому стилю написания кода благодаря [prettier](https://prettier.io/) и проверить на стилевые и другие ошибки с помощью линтеров [stylelint](https://stylelint.io/) и [eslint](https://eslint.org/).
+Последние 3 функции запускаются автоматически в момент создания [git](https://git-scm.com/book/ru/v2) [commit](https://git-scm.com/book/ru/v2/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git-%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B2-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9) и останавливают процесс коммита при выявлении ошибок. Все это благодаря использованию [Git hooks](https://git-scm.com/book/ru/v2/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git-%D0%A5%D1%83%D0%BA%D0%B8-%D0%B2-Git) и инструмента [husky](https://typicode.github.io/husky/#/).
 
 ---
 
@@ -28,7 +29,7 @@ JS-файлы разбиты на модули, объединение и опт
 
 ## Как использовать
 
-`npm install` - установка зависимостей.
+`npm install` - установка зависимостей. (вкл. автоматическая инициализация git и установка husky)
 
 `npm start` - сборка проекта в режиме разработки и запуск локального сервера.
 
@@ -44,6 +45,7 @@ JS-файлы разбиты на модули, объединение и опт
 
 ```bash
 
+├── .husky/                 # каталог настроек инструмента husky
 ├── dist/                   # каталог сборки проекта (cоздаётся автоматически)
 ├── gulpfile.js/            # каталог задач Gulp
 ├── src/                    # каталог для размещения исходных файлов проекта
@@ -73,4 +75,5 @@ JS-файлы разбиты на модули, объединение и опт
 ├── package-lock.json       # lock-файл npm
 ├── README.md               # документация проекта
 ├── version.json            # файл с номером актуальной версии проекта (cоздаётся автоматически)
+
 ```
